@@ -1,0 +1,25 @@
+{
+  "name": "heroku-baker",
+  "version": "1.0.0",
+  "description": "heroku sample app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcheonsa/heroku-baker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jcheonsa/heroku-baker/issues"
+  },
+  "homepage": "https://github.com/jcheonsa/heroku-baker#readme",
+  "dependencies": {
+    "@discordjs/rest": "^0.4.1",
+    "discord-api-types": "^0.33.0",
+    "discord.js": "^13.7.0",
+    "dotenv": "^16.0.1"
+  }
+}
