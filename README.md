@@ -85,7 +85,7 @@ npm install .
 First off, clone the sample-app. 
 
 1) open/create the `.env` in Heroku-Baker's root directory
-2) `npm install` will install all dependencies located in the package.json in a folder called node_modules
+2) `npm install` will install all dependencies located in the package.json in a folder called `/node_modules`
 3) configure the `TOKEN`, `GUILD_ID` and `CLIENT_ID`
 
 ### Fetching your bot's credentials
@@ -97,7 +97,7 @@ TOKEN=
 GUILD_ID=
 CLIENT_ID=
 ```
-https://discord.com/developers/applications to create your own Heroku-Baker clone and get your token.
+https://discord.com/developers/applications to create your own Heroku-Baker clone and get your token. Enabling Developer Mode in your Discord client will let you right-click and get the IDs for your guild (`GUILD_ID`) and bot application (`CLIENT_ID`).
 
 ![img](./src/img/cloudflare-url-generator.png)
 >OAuth NOTE: Ensure that your app has the appropriate scopes for `application.commands` and `bot`.
