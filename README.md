@@ -85,8 +85,11 @@ npm install .
 First off, clone the sample-app. 
 
 1) open/create the `.env` in Heroku-Baker's root directory
-2) configure the `GUILD_ID` and `CLIENT_ID`
-3) `npm install` will install all dependencies located in the package.json in a folder called node_modules
+2) `npm install` will install all dependencies located in the package.json in a folder called node_modules
+3) configure the `TOKEN`, `GUILD_ID` and `CLIENT_ID`
+
+### Fetching your bot's credentials
+![img](./src/img/token.png)
 
 After cloning the project and installing all of the dependencies, you're going to need to add your Discord API `TOKEN` in the `.env` file as well as the `GUILD_ID` and `CLIENT_ID`. Your `.env` should include the following for this bot to operate properly:
 ```
@@ -96,6 +99,7 @@ CLIENT_ID=
 ```
 https://discord.com/developers/applications to create your own Heroku-Baker clone and get your token.
 
+![img](./src/img/cloudflare-url-generator.png)
 >OAuth NOTE: Ensure that your app has the appropriate scopes for `application.commands` and `bot`.
 
 ```bash
@@ -109,7 +113,7 @@ Then **create a new file called `Procfile`** where you will add a short script t
 
 ![img](./src/img/connectGH.png)
 
-After creating the application in Heroku, you will be met with some options in the *Deploy* tab. From here, you have several deployment method options to choose from, we'll look to **Connect this app to GitHub**.
+After creating the application in Heroku, you will be met with some options in the **Deploy** tab. From here, you have several deployment method options to choose from, we'll look to **Connect this app to GitHub**.
  
 >NOTE that you can only connect Heroku apps to a single GitHub repository. 
 
