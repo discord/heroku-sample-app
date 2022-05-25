@@ -84,11 +84,11 @@ npm install .
 ```
 First off, clone the sample-app. 
 
-1) open/create the .env in Baker-bot's root directory
+1) open/create the `.env` in Baker-bot's root directory
 2) configure the `GUILD_ID` and `CLIENT_ID`
 3) `npm install` will install all dependencies located in the package.json in a folder called node_modules
 
-After cloning the project and installing all of the dependencies, you're going to need to add your Discord API `TOKEN` in the `.env` file as well Your `.env` should include the following for this bot to operate properly:
+After cloning the project and installing all of the dependencies, you're going to need to add your Discord API `TOKEN` in the `.env` file as well as the `GUILD_ID` and `CLIENT_ID`. Your `.env` should include the following for this bot to operate properly:
 ```
 TOKEN=
 GUILD_ID=
@@ -96,21 +96,21 @@ CLIENT_ID=
 ```
 https://discord.com/developers/applications to create your own Baker-bot clone and get your token.
 
-OAuth NOTE: Ensure that your app has the appropriate scopes for `application.commands` and `bot`.
+>OAuth NOTE: Ensure that your app has the appropriate scopes for `application.commands` and `bot`.
 
-Then **create a new file called `Procfile`** where you will add a short script that Heroku will run when starting up your app. 
 ```bash
 # Procfile contents (startup)
 worker node index.js
 ```
-The script in your `Procfile` will vary depending on what language you're coding in.
+Then **create a new file called `Procfile`** where you will add a short script that Heroku will run when starting up your app. 
+> The script in your `Procfile` will vary depending on what language you're coding in.
 
 ## Connecting Heroku to GitHub
 
 ![img](./src/img/connectGH.png)
 
 After creating the application in Heroku, you will be met with some options in the *Deploy* tab. From here, you have several deployment method options to choose from, we'll look to **Connect this app to GitHub**.
->warn 
+ 
 >NOTE that you can only connect Heroku apps to a single GitHub repository. 
 
 From there, you will be able to manage the app's deployment method:
@@ -119,7 +119,6 @@ From there, you will be able to manage the app's deployment method:
 
 Selecting a branch and enabling **Automatic Deploys** for your app will deploy a new version of this app every time a push occurs. **Manual Deploys** would require you to select a specific branch before updates go live for your bot. 
 
->info
 >If you want to do this with the Heroku CLI, there are separate steps in the dashboard you can follow to accomlish this as well. [LINK](https://devcenter.heroku.com/articles/heroku-cli)
 
 ## Configuring app in Heroku
@@ -142,5 +141,7 @@ You'll notice a new window in the dashboard once you have successfully connected
 ![img](./src/img/view%20logs.png)
 
 Status and updates for the dyno, any deploys as well as specific logs from your bot will be available in the **View Logs** tab. if a shard ever goes off or your bot crashes, the app will automatically restart. These events will also be [logged](https://devcenter.heroku.com/articles/logging).
+
+![img](./src/img/dynos.png)
 
 Congratulations, your bot is now ready to go live!
