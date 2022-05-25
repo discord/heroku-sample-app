@@ -1,6 +1,6 @@
 # Hosting Heroku-Baker
 
-![bread](https://www.thespruceeats.com/thmb/SlKg4bYyXu4u_37vl8zW0XyEFRI=/1500x1000/filters:fill(auto,1)/easy-honey-white-bread-recipe-428160-hero-01-22ed0bda55f643318b4c658a2c020647.jpg)
+![bread](./src/img/baking.gif)
 
 Running your app locally can be helpful for development, but once your app is ready for production and especially being added to more and more servers, you should consider using a hosting provider.
 
@@ -31,6 +31,7 @@ This tutorial will walk you through:
 ├── index.js        -> main entrypoint for app
 ├── src    
 │   ├── startup.js  -> slash command payload
+│   ├── img
 │   ├── handlers    -> utility functions
 │   │   ├── rng.js
 │   │   ├── cache.js
@@ -44,7 +45,8 @@ This tutorial will walk you through:
 ## Features
 
 - Bakes bread (with varying degrees of success)
-- Basic slash command handling
+- Basic [slash command](https://discord.com/developers/docs/interactions/application-commands) handling
+- [Buttons](https://discord.com/developers/docs/interactions/message-components#buttons)
 - Caching system
 
 ## Requirements
@@ -68,8 +70,40 @@ If you do not have your own application to deploy, you can continue to follow th
 
 If your application does not have a git repository set up, you can refer to the steps here to get that all set up: [LINK](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
 
-## Prepping required components
-First off, **create a new file called `Procfile`** where you will add a short script that Heroku will run when starting up your app.
+### Prepping required components
+
+```bash
+# Clone the respository
+git clone https://github.com/jcheonsa/heroku-baker
+
+# Enter into the directory
+cd baker-bot
+
+# Install the dependencies
+npm install .
+```
+First off, clone the sample-app. 
+
+1) open/create the .env in Baker-bot's root directory
+2) configure the `GUILD_ID` and `CLIENT_ID`
+3) `npm install` will install all dependencies located in the package.json in a folder called node_modules
+
+After cloning the project and installing all of the dependencies, you're going to need to add your Discord API `TOKEN` in the `.env` file as well Your `.env` should include the following for this bot to operate properly:
+```
+TOKEN=
+GUILD_ID=
+CLIENT_ID=
+```
+https://discord.com/developers/applications to create your own Baker-bot clone and get your token.
+
+OAuth NOTE: Ensure that your app has the appropriate scopes for `application.commands` and `bot`.
+
+Then **create a new file called `Procfile`** where you will add a short script that Heroku will run when starting up your app. 
+```bash
+# Procfile contents (startup)
+worker node index.js
+```
+The script in your `Procfile` will vary depending on what language you're coding in.
 
 ## Connecting Heroku to GitHub
 
@@ -90,22 +124,7 @@ Selecting a branch and enabling **Automatic Deploys** for your app will deploy a
 
 ## Configuring app in Heroku
 
-```bash
-# Clone the respository
-git clone https://github.com/jcheonsa/heroku-baker
-
-# Enter into the directory
-cd baker-bot
-
-# Install the dependencies
-npm install .
-```
-
 Before your app can go online, you'll have to configure your Heroku environment with your Discord bot's credentials.
-
-1) open/create the .env in Baker-bot's root directory
-2) configure the `GUILD_ID` and `CLIENT_ID`
-3) `npm install` will install all dependencies located in the package.json in a folder called node_modules
 
 Config vars allow you to set environment-specific variables and configurations for the app. These will persist throughout the different guilds your bot is operating in, and make it so you won’t need to store these variables in source code. Additionally, all config vars are encrypted. With that said, add your bot’s `TOKEN` and any other tokens or API keys it may require to operate properly to the list of config vars.
 
