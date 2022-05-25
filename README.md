@@ -138,6 +138,8 @@ You'll notice that there isn't anything you have to change in your source code. 
 
 The next step is to **add a buildpack to your app**. The buildpack is responsible for compiling your deployed code and installing any dependencies, meaning the one you select will also depend on how you built your bot. Since Heroku-Baker is a node app, we'll need to add the nodeJS buildpack.
 
+Congratulations, your bot is now ready to go live!
+
 ## Maintenance and how to monitor
 
 You'll notice a new window in the dashboard once you have successfully connected your app to your bot's repo. A **Dyno** is a virtualized Linux container that executes the code in `Procfile` - think of it as a mini computer dedicated to running your bot. By default, Heroku gives 550 free dyno hours per application per month. [This is just enough to keep your bot online 24/7] If your app will need additional hours, you can look at Heroku's [pricing page](https://www.heroku.com/pricing).
@@ -147,5 +149,3 @@ You'll notice a new window in the dashboard once you have successfully connected
 Status and updates for the dyno, any deploys as well as specific logs from your bot will be available in the **View Logs** tab. if a shard ever goes off or your bot crashes, the app will automatically restart. These events will also be [logged](https://devcenter.heroku.com/articles/logging).
 
 ![img](./src/img/dynos.png)
-
-Congratulations, your bot is now ready to go live!
