@@ -77,14 +77,14 @@ If your application does not have a git repository set up, you can refer to the 
 git clone https://github.com/jcheonsa/heroku-baker
 
 # Enter into the directory
-cd baker-bot
+cd heroku-baker
 
 # Install the dependencies
 npm install .
 ```
 First off, clone the sample-app. 
 
-1) open/create the `.env` in Baker-bot's root directory
+1) open/create the `.env` in Heroku-Baker's root directory
 2) configure the `GUILD_ID` and `CLIENT_ID`
 3) `npm install` will install all dependencies located in the package.json in a folder called node_modules
 
@@ -94,7 +94,7 @@ TOKEN=
 GUILD_ID=
 CLIENT_ID=
 ```
-https://discord.com/developers/applications to create your own Baker-bot clone and get your token.
+https://discord.com/developers/applications to create your own Heroku-Baker clone and get your token.
 
 >OAuth NOTE: Ensure that your app has the appropriate scopes for `application.commands` and `bot`.
 
@@ -132,7 +132,7 @@ You'll notice that there isn't anything you have to change in your source code. 
 
 ![img](./src/img/buildpack.png)
 
-The next step is to **add a buildpack to your app**. The buildpack is responsible for compiling your deployed code and installing any dependencies, meaning the one you select will also depend on how you built your bot.
+The next step is to **add a buildpack to your app**. The buildpack is responsible for compiling your deployed code and installing any dependencies, meaning the one you select will also depend on how you built your bot. Since Heroku-Baker is a node app, we'll need to add the nodeJS buildpack.
 
 ## Maintenance and how to monitor
 
