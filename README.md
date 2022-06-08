@@ -84,7 +84,7 @@ Add your bot’s `TOKEN`, `GUILD_ID`, `CLIENT_ID`, and any other credentials you
 
 Next, add a Heroku buildpack to your app. Click **add a buildpack to your app** and configure it for NodeJS.
 
-![Adding a buildpack](heroku-buildpack.png)
+![Adding a buildpack](./src/img/heroku-buildpack.png)
 
 ## Next steps
 
