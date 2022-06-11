@@ -49,6 +49,8 @@ Before starting, you'll need a [Discord app](https://discord.com/developers/appl
   
 > ⚙️ Permissions can be configured by clicking on the OAuth2 tab and using the URL Generator. After a URL is generated, you can install the app by pasting that URL into your browser and following the installation flow.
 
+> 📁 Edit Procfile for Start Heroku `Worker: Command` example node index.js
+
 ## Configure Heroku
 
 Next you'll need to configure Heroku:
