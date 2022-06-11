@@ -47,7 +47,9 @@ Before starting, you'll need a [Discord app](https://discord.com/developers/appl
 - `bot` scope (after your bot user is enabled) with the `Manage Roles` permission
 - `applications.commands` scope
   
-> ⚙️ Permissions can be configured by clicking on the OAuth2 tab and using the URL Generator. After a URL is generated, you can install the app by pasting that URL into your browser and following the installation flow.
+> ⚙️ Permissions can be configured by click on the OAuth2 tab and using the URL Generator. After a URL is generated, you can install the app by pasting that URL into your browser and following the installation flow.
+
+> 📁 Edit Procfile for Start Heroku `Worker: Command` example node index.js
 
 ## Configure Heroku
 
