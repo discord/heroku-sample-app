@@ -1,10 +1,7 @@
 const {
-    SlashCommandBuilder
-} = require('@discordjs/builders');
-
-const {
-    MessageEmbed,
-} = require('discord.js')
+    SlashCommandBuilder, 
+    EmbedBuilder
+} = require('discord.js');
 
 const api = require('../src/handlers/oven')
 const rng = require('../src/handlers/rng')
@@ -47,7 +44,7 @@ module.exports = {
 
         var initCache = cache.get(member.id);
 
-        var embed = new MessageEmbed()
+        var embed = new EmbedBuilder()
             .setColor('#FFDB69')
 
         const quality = async function oven() {
@@ -142,7 +139,7 @@ module.exports = {
             }
 
             var checkCache = cache.get(member.id);
-            var res = new MessageEmbed()
+            var res = new EmbedBuilder()
                 .setDescription(`You have **${checkCache}** baker points!\n
             Bake higher quality pastries for more points! \n Be careful though, lower quality pastries means you lose points.`)
 
