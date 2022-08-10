@@ -1,6 +1,6 @@
 const { Collection } = require('discord.js');
 const { REST } = require('@discordjs/rest')
-const { Routes } = require('discord-api-types/v9');
+const { Routes } = require('discord-api-types/v10');
 
 const TOKEN = process.env.TOKEN
 const CLIENT_ID = process.env.CLIENT_ID
@@ -27,7 +27,7 @@ module.exports = (client) => {
 
         // Registering the commands in the client
         const rest = new REST({
-            version: '9'
+            version: '10'
         }).setToken(TOKEN);
         (async () => {
             try {

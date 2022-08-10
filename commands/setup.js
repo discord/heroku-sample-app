@@ -1,12 +1,8 @@
 const {
-    SlashCommandBuilder
-} = require('@discordjs/builders');
-
-const {
-    MessageActionRow,
-    MessageButton
-} = require('discord.js')
-
+    SlashCommandBuilder, 
+    ActionRowBuilder, 
+    ButtonBuilder
+} = require('discord.js');
 
 module.exports = {
     name: "setup",
@@ -31,27 +27,27 @@ module.exports = {
             })
         }
 
-        const row = new MessageActionRow()
+        const row = new ActionRowBuilder()
             .addComponents(
-                new MessageButton()
+                new ButtonBuilder()
                     .setCustomId('cake')
                     .setLabel('Cakeist')
                     .setStyle('PRIMARY'),
             )
             .addComponents(
-                new MessageButton()
+                new ButtonBuilder()
                     .setCustomId('bread')
                     .setLabel('Breadible')
                     .setStyle('SECONDARY'),
             )
             .addComponents(
-                new MessageButton()
+                new ButtonBuilder()
                     .setCustomId('cookie')
                     .setLabel('Cookier')
                     .setStyle('SECONDARY'),
             )
             .addComponents(
-                new MessageButton()
+                new ButtonBuilder()
                     .setCustomId('pie')
                     .setLabel('Piefessional')
                     .setStyle('SECONDARY'),

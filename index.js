@@ -1,13 +1,13 @@
 // import requirements 
 const {
     Client,
-    Intents,
-    MessageEmbed,
+    GatewayIntentBits,
+    EmbedBuilder,
 } = require('discord.js');
 
-// starting in djs v13, we are required to specify which intents we are using in the client constructor
+// starting in djs v14, we are required to specify which intents we are using in the client constructor
 const client = new Client({
-    intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]
+    intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages]
 });
 
 const dotenv = require('dotenv')
@@ -36,7 +36,7 @@ client.on('interactionCreate', async (interaction) => {
 
     if (interaction.isButton()) {
         const commandName = interaction.customId;
-        var Embed = new MessageEmbed()
+        var Embed = new EmbedBuilder()
             .setColor('#00000')
             .setTitle('Base Embed')
             .setDescription('Base Description')
@@ -110,7 +110,7 @@ client.on('interactionCreate', async (interaction) => {
         }
     }
 
-    if (interaction.isCommand()) {
+    if (interaction.isChatInputCommand()) {
 
         const command = client.commands.get(interaction.commandName);
 

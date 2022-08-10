@@ -1,10 +1,7 @@
 const {
-    SlashCommandBuilder
-} = require('@discordjs/builders');
-
-const {
-    MessageEmbed
-} = require('discord.js')
+    SlashCommandBuilder, 
+    EmbedBuilder
+} = require('discord.js');
 
 module.exports = {
     name: "start",
@@ -24,7 +21,7 @@ module.exports = {
         const pieRole = guild.roles.cache.find(role => role.name == "Piefessional");
         const glutenRole = guild.roles.cache.find(role => role.name == "Gluten-Free")
 
-        var embed = new MessageEmbed()
+        var embed = new EmbedBuilder()
             .setTitle(`Set up Baker`)
 
         var arr = [];
